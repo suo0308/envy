@@ -357,10 +357,10 @@ export default function Home() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-900">
+    <div className="flex h-screen bg-gray-900 overflow-hidden">
       {/* サイドバー */}
       <div
-        className={`${sidebarOpen ? "w-64" : "w-0"} transition-all duration-300 bg-gray-800 border-r border-gray-700 overflow-hidden`}
+        className={`${sidebarOpen ? "w-64 md:w-64" : "w-0"} transition-all duration-300 bg-gray-800 border-r border-gray-700 overflow-hidden fixed md:relative inset-y-0 left-0 z-40`}
       >
         <div className="p-4">
           <div className="flex items-center justify-between mb-4">
@@ -423,28 +423,36 @@ export default function Home() {
       </div>
 
       {/* メインエリア */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col w-full md:w-auto">
         {/* ヘッダー */}
-        <header className="bg-gray-800 text-white p-4 shadow-lg flex items-center gap-4">
+        <header className="bg-gray-800 text-white p-3 md:p-4 shadow-lg flex items-center gap-2 md:gap-4">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="text-white hover:bg-gray-700 p-2 rounded"
+            className="text-white hover:bg-gray-700 p-2 rounded md:hidden"
+            aria-label="メニュー"
           >
             ☰
           </button>
-          <div>
-            <h1 className="text-xl font-bold">
+          <button
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="text-white hover:bg-gray-700 p-2 rounded hidden md:block"
+            aria-label="メニュー"
+          >
+            ☰
+          </button>
+          <div className="flex-1 min-w-0">
+            <h1 className="text-lg md:text-xl font-bold truncate">
               💬 チャットAI
               {selectedClient && ` - ${selectedClient.name}`}
             </h1>
-            <p className="text-sm text-gray-400">
+            <p className="text-xs md:text-sm text-gray-400 hidden md:block">
               売れっ子ホストのLINE術で返信提案
             </p>
           </div>
         </header>
 
         {/* メッセージエリア */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex-1 overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4 pb-20 md:pb-4">
           {messages.length === 0 && (
             <div className="text-center text-gray-500 mt-10">
               <p className="text-lg">
@@ -467,7 +475,7 @@ export default function Home() {
               className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
             >
               <div
-                className={`max-w-[80%] rounded-2xl px-4 py-2 ${message.sender === "user"
+                className={`max-w-[85%] md:max-w-[80%] rounded-2xl px-3 md:px-4 py-2 text-sm md:text-base ${message.sender === "user"
                   ? "bg-green-500 text-white rounded-br-sm"
                   : "bg-gray-700 text-white rounded-bl-sm"
                   }`}
@@ -502,33 +510,33 @@ export default function Home() {
           )}
 
           {suggestions.length > 0 && (
-            <div className="space-y-3">
-              <p className="text-gray-400 text-sm">
-                💡 返信候補（クリックで選択、右のボタンでコピー）
+            <div className="space-y-2 md:space-y-3">
+              <p className="text-gray-400 text-xs md:text-sm">
+                💡 返信候補（タップで選択、📋でコピー）
               </p>
               {suggestions.map((suggestion) => (
                 <div
                   key={suggestion.number}
-                  className="bg-gray-800 border border-gray-600 rounded-xl p-4 hover:border-purple-500 transition-colors"
+                  className="bg-gray-800 border border-gray-600 rounded-xl p-3 md:p-4 hover:border-purple-500 transition-colors"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div
-                      className="flex-1 cursor-pointer"
+                      className="flex-1 cursor-pointer min-w-0"
                       onClick={() => handleSelectSuggestion(suggestion)}
                     >
                       <span className="inline-block bg-purple-600 text-white text-xs px-2 py-1 rounded-full mb-2">
                         候補 {suggestion.number}
                       </span>
-                      <p className="text-white font-medium">{suggestion.text}</p>
+                      <p className="text-white font-medium text-sm md:text-base break-words">{suggestion.text}</p>
                       {suggestion.explanation && (
-                        <p className="text-gray-400 text-sm mt-2">
+                        <p className="text-gray-400 text-xs md:text-sm mt-2 break-words">
                           {suggestion.explanation}
                         </p>
                       )}
                     </div>
                     <button
                       onClick={() => handleCopySuggestion(suggestion.text)}
-                      className="bg-gray-700 hover:bg-gray-600 text-white px-3 py-2 rounded-lg text-sm transition-colors"
+                      className="bg-gray-700 hover:bg-gray-600 text-white px-2 md:px-3 py-2 rounded-lg text-sm transition-colors flex-shrink-0"
                       title="コピー"
                     >
                       📋
@@ -543,26 +551,26 @@ export default function Home() {
         </div>
 
         {/* 入力エリア */}
-        <div className="bg-gray-800 p-4 border-t border-gray-700">
+        <div className="bg-gray-800 p-3 md:p-4 border-t border-gray-700 fixed bottom-0 left-0 right-0 md:relative">
           {/* 画像プレビュー */}
           {imagePreview && (
             <div className="mb-3 relative">
               <img
                 src={imagePreview}
                 alt="プレビュー"
-                className="max-h-48 rounded-lg border border-gray-600"
+                className="max-h-32 md:max-h-48 rounded-lg border border-gray-600 w-full object-contain"
               />
               <div className="flex gap-2 mt-2">
                 <button
                   onClick={handleCancelImage}
-                  className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded-lg text-sm"
+                  className="bg-gray-600 hover:bg-gray-500 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm flex-1"
                 >
                   ✕ キャンセル
                 </button>
                 <button
                   onClick={handleSendImage}
                   disabled={isLoading}
-                  className="bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm"
+                  className="bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm flex-1"
                 >
                   {isLoading ? "⏳ 解析中..." : "📤 送信して解析"}
                 </button>
@@ -587,14 +595,14 @@ export default function Home() {
             />
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="bg-gray-700 hover:bg-gray-600 text-white p-3 rounded-full transition-colors"
+              className="bg-gray-700 hover:bg-gray-600 text-white p-2 md:p-3 rounded-full transition-colors flex-shrink-0"
               title="txtファイルをアップロード"
             >
               📎
             </button>
             <button
               onClick={() => imageInputRef.current?.click()}
-              className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors"
+              className="bg-blue-600 hover:bg-blue-700 text-white p-2 md:p-3 rounded-full transition-colors flex-shrink-0"
               title="スクリーンショットをアップロード"
             >
               📷
@@ -610,7 +618,7 @@ export default function Home() {
                 }
               }}
               placeholder="女性からのメッセージを入力..."
-              className="flex-1 bg-gray-700 text-white rounded-2xl px-4 py-3 resize-none focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="flex-1 bg-gray-700 text-white rounded-2xl px-3 md:px-4 py-2 md:py-3 resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm md:text-base"
               rows={1}
               style={{ maxHeight: "120px" }}
             />
@@ -618,7 +626,7 @@ export default function Home() {
             <button
               onClick={handleSend}
               disabled={isLoading || !input.trim()}
-              className="bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white p-3 rounded-full transition-colors"
+              className="bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white p-2 md:p-3 rounded-full transition-colors flex-shrink-0"
             >
               {isLoading ? "⏳" : "➤"}
             </button>
@@ -626,10 +634,18 @@ export default function Home() {
         </div>
       </div>
 
+      {/* サイドバーオーバーレイ（モバイル用） */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
       {/* 新規クライアント追加モーダル */}
       {showNewClientModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-gray-800 rounded-xl p-6 w-80">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-gray-800 rounded-xl p-4 md:p-6 w-full max-w-sm">
             <h3 className="text-white font-bold mb-4">新規クライアント追加</h3>
             <input
               type="text"

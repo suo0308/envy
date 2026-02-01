@@ -43,8 +43,8 @@ Thumbs.db
 *.tsbuildinfo
 next-env.d.ts
 
-# Learning data (private information)
-**/data/learning/*.txt
+# Learning data - 学習データは含める（コメントアウト）
+# **/data/learning/*.txt
 
 # Large binary files (exceeds GitHub 100MB limit)
 *.pak
