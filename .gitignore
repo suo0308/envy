@@ -46,7 +46,9 @@ next-env.d.ts
 # Learning data (private information)
 **/data/learning/*.txt
 
-# Large binary files (optional - uncomment if needed)
-# *.pak
-# *.dll
-# *.exe
+# Large binary files (exceeds GitHub 100MB limit)
+*.pak
+*.dll
+*.exe
+*.asar
+AIチャット/hostline/Fellou/
