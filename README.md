@@ -65,11 +65,34 @@ npm install
 npm run dev
 ```
 
+## 🌐 Vercelで公開する
+
+インターネット上で公開して、スマホからもアクセスできるようにする方法：
+
+1. **Vercelアカウントを作成**
+   - [vercel.com](https://vercel.com) で無料登録
+
+2. **GitHubリポジトリと連携**
+   - Vercelダッシュボードから「Add New Project」
+   - GitHubリポジトリ `suo0308/envy` を選択
+   - **Root Directory**: `AIチャット/app` を指定
+
+3. **環境変数を設定**
+   - `GEMINI_API_KEY` を設定（Gemini APIキー）
+
+4. **デプロイ**
+   - 「Deploy」ボタンをクリック
+   - 数分で完了し、URLが生成されます
+
+詳細は [Vercelデプロイ手順.md](Vercelデプロイ手順.md) を参照してください。
+
 ## 📖 詳細ドキュメント
 
 - [開発仕様書](AIチャット/開発仕様書.md)
 - [起動ガイド](AIチャット/docs/起動ガイド.md)
 - [使い方ガイド](AIチャット/docs/walkthrough.md)
+- [Vercelデプロイ手順](Vercelデプロイ手順.md)
+- [スマホアクセス方法](スマホアクセス方法.md)
 
 ## 🛠️ 技術スタック
 
