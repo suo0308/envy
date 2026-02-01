@@ -1,0 +1,315 @@
+<h1>📊 AIチャットアプリ 運用費用詳細</h1>
+<blockquote>
+<p>作成日: 2026年1月15日<br>アプリ: ホストLINE返信アドバイザー<br>URL: <a href="https://app-six-fawn-76.vercel.app">https://app-six-fawn-76.vercel.app</a></p>
+</blockquote>
+<hr>
+<h2>📋 概要</h2>
+<p>このアプリの運用には主に2つのサービスを使用しています：</p>
+<table>
+<thead>
+<tr>
+<th>サービス</th>
+<th>用途</th>
+<th>現在のプラン</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Vercel</strong></td>
+<td>ホスティング・デプロイ</td>
+<td>Hobby（無料）</td>
+</tr>
+<tr>
+<td><strong>Google Gemini API</strong></td>
+<td>AI応答生成</td>
+<td>従量課金</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🖥️ Vercel ホスティング費用</h2>
+<h3>Hobbyプラン（現在使用中）- <strong>無料</strong></h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>無料枠</th>
+<th>超過時</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>データ転送</td>
+<td>100 GB/月</td>
+<td>プロジェクト一時停止</td>
+</tr>
+<tr>
+<td>Edgeリクエスト</td>
+<td>100万回/月</td>
+<td>プロジェクト一時停止</td>
+</tr>
+<tr>
+<td>関数呼び出し</td>
+<td>100万回/月</td>
+<td>プロジェクト一時停止</td>
+</tr>
+<tr>
+<td>ビルド時間</td>
+<td>100時間/月</td>
+<td>プロジェクト一時停止</td>
+</tr>
+<tr>
+<td>デプロイ</td>
+<td>100回/日</td>
+<td>プロジェクト一時停止</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ <strong>注意</strong>: Hobbyプランは商用利用不可。超過した場合は課金ではなくプロジェクトが停止します。</p>
+</blockquote>
+<h3>Proプラン（有料オプション）</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>料金</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基本料金</td>
+<td><strong>$20/月</strong>（約3,000円）</td>
+</tr>
+<tr>
+<td>データ転送超過</td>
+<td>$0.15/GB</td>
+</tr>
+<tr>
+<td>関数呼び出し超過</td>
+<td>$0.60/100万回</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🤖 Gemini API 費用</h2>
+<h3>現在使用中のモデル: <strong>Gemini 2.5 Flash</strong></h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>料金（100万トークンあたり）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>入力トークン</td>
+<td><strong>$0.10</strong>（約15円）</td>
+</tr>
+<tr>
+<td>出力トークン</td>
+<td><strong>$0.40</strong>（約60円）</td>
+</tr>
+<tr>
+<td>画像入力</td>
+<td><strong>$0.10</strong>（約15円）</td>
+</tr>
+</tbody></table>
+<h3>無料枠</h3>
+<ul>
+<li><strong>1日1,500リクエスト</strong>まで無料（Google AI Studioの制限内）</li>
+<li>個人利用の範囲では実質無料で使用可能</li>
+</ul>
+<hr>
+<h2>💰 月額費用シミュレーション</h2>
+<h3>ケース1: 個人利用（軽量）</h3>
+<p><strong>想定</strong>: 1日10〜20回使用</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>費用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Vercel</td>
+<td>¥0（無料枠内）</td>
+</tr>
+<tr>
+<td>Gemini API</td>
+<td>¥0（無料枠内）</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td><strong>¥0/月</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h3>ケース2: 個人利用（中程度）</h3>
+<p><strong>想定</strong>: 1日50回使用（月1,500回）</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>計算</th>
+<th>費用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Vercel</td>
+<td>無料枠内</td>
+<td>¥0</td>
+</tr>
+<tr>
+<td>Gemini入力</td>
+<td>1,500回 × 2,000トークン = 300万トークン</td>
+<td>約¥45</td>
+</tr>
+<tr>
+<td>Gemini出力</td>
+<td>1,500回 × 500トークン = 75万トークン</td>
+<td>約¥45</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td></td>
+<td><strong>約¥90/月</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h3>ケース3: ヘビーユーザー</h3>
+<p><strong>想定</strong>: 1日100回使用（月3,000回）+ 画像解析多用</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>計算</th>
+<th>費用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Vercel</td>
+<td>無料枠内</td>
+<td>¥0</td>
+</tr>
+<tr>
+<td>Gemini入力</td>
+<td>3,000回 × 3,000トークン = 900万トークン</td>
+<td>約¥135</td>
+</tr>
+<tr>
+<td>Gemini出力</td>
+<td>3,000回 × 500トークン = 150万トークン</td>
+<td>約¥90</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td></td>
+<td><strong>約¥225/月</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h3>ケース4: 商用利用・チーム利用</h3>
+<p><strong>想定</strong>: 1日500回使用（月15,000回）</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>計算</th>
+<th>費用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Vercel Pro</td>
+<td>基本料金</td>
+<td>¥3,000</td>
+</tr>
+<tr>
+<td>Gemini入力</td>
+<td>15,000回 × 3,000トークン = 4,500万トークン</td>
+<td>約¥675</td>
+</tr>
+<tr>
+<td>Gemini出力</td>
+<td>15,000回 × 500トークン = 750万トークン</td>
+<td>約¥450</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td></td>
+<td><strong>約¥4,125/月</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📈 トークン数の目安</h2>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>概算トークン数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>短いLINEメッセージ（日本語50文字）</td>
+<td>約50〜100トークン</td>
+</tr>
+<tr>
+<td>学習データ（ホスト分析）</td>
+<td>約10,000〜50,000トークン</td>
+</tr>
+<tr>
+<td>システムプロンプト</td>
+<td>約1,000〜2,000トークン</td>
+</tr>
+<tr>
+<td>AI応答（3つの候補）</td>
+<td>約300〜500トークン</td>
+</tr>
+<tr>
+<td>画像（LINEスクショ）</td>
+<td>約1,000〜5,000トークン</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>💡 コスト削減のヒント</h2>
+<h3>1. 学習データの最適化</h3>
+<p>現在150KB制限がありますが、必要最小限に絞ることでトークン消費を削減</p>
+<h3>2. キャッシュの活用</h3>
+<p>同じ質問パターンにはキャッシュを使用（将来的な機能追加）</p>
+<h3>3. 軽量モデルへの切り替え</h3>
+<ul>
+<li><strong>Gemini 2.5 Flash-Lite</strong>: 入力$0.10、出力$0.40（現在と同等）</li>
+<li>より軽いモデルが出たら切り替え検討</li>
+</ul>
+<h3>4. バッチ処理</h3>
+<p>即時応答が不要な場合、バッチモードで約50%割引</p>
+<hr>
+<h2>🎯 結論</h2>
+<table>
+<thead>
+<tr>
+<th>利用パターン</th>
+<th>月額費用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>個人・軽量利用</td>
+<td><strong>¥0</strong>（無料）</td>
+</tr>
+<tr>
+<td>個人・中程度</td>
+<td><strong>約¥100〜300</strong></td>
+</tr>
+<tr>
+<td>ヘビーユーザー</td>
+<td><strong>約¥300〜500</strong></td>
+</tr>
+<tr>
+<td>商用・チーム</td>
+<td><strong>約¥4,000〜10,000</strong></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>💡 <strong>ポイント</strong>: 個人利用であれば、ほぼ無料〜月数百円程度で永続的に使用可能です。
+Gemini APIの無料枠（1日1,500リクエスト）内であれば完全無料で使えます。</p>
+</blockquote>
+<hr>
+<h2>📚 参考リンク</h2>
+<ul>
+<li><a href="https://vercel.com/pricing">Vercel Pricing</a></li>
+<li><a href="https://ai.google.dev/pricing">Google AI Pricing</a></li>
+<li><a href="https://ai.google.dev/docs">Gemini API Documentation</a></li>
+</ul>
